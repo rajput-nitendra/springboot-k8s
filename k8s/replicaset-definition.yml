@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: db-service-replicaset
+  labels:
+    app: db-service
+spec:
+  template:
+    metadata:
+      name: db-service-pod
+      labels:
+        app: db-service
+    spec:
+      containers:
+        - name: db-service-container
+          image: nitendra18/db-service
+  replicas: 3
+  selector:
+    matchLabels:
+      app: db-service
+
+# kubectl create -f .\replicaset-definition.yml

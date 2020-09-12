@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db-service-pod
+  labels:
+    app: db-service
+spec:
+  containers:
+    - name: db-service-container
+      image: nitendra18/db-service
+
+
+# kubectl create -f .\pod-definition.yml
